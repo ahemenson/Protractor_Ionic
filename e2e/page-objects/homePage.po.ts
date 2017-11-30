@@ -3,11 +3,11 @@ import { browser, by, element, $ } from 'protractor';
 export class HomePage {
 
     public getItem() {
-        return element.all(by.id('item')).all(by.css('button')).get(0);       
+       return element.all(by.css('ion-item-sliding.item-wrapper')).get(1); 
     }
 
     public getItem2() {
-        return element.all(by.id('item')).all(by.css('button')).get(2);       
+            
     }
 
     public getTabHome() {
@@ -23,7 +23,7 @@ export class HomePage {
     }
 
     public getButtonBack() {
-        return element(by.css('button.back-button bar-button bar-button-md back-button-md bar-button-default bar-button-default-md show-back-button'));
+        return element(by.css('back-button bar-button bar-button-md back-button-md bar-button-default bar-button-default-md show-back-button'));
     }
 
     public getAddIcon() {
