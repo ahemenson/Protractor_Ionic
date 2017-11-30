@@ -4,7 +4,13 @@ exports.config = {
     allScriptsTimeout: 11000,
     directConnect: true,
     capabilities: {
-        'browserName': 'chrome'
+        'browserName': 'chrome',
+        'chromeOptions': {
+            'mobileEmulation': {
+                // 'deviceName': 'ipad ',
+                "deviceMetrics": { "width": 412, "height": 732, "touch": true }, //Nexus 6P
+            }
+        }
     },
     framework: 'jasmine',
     jasmineNodeOpts: {
