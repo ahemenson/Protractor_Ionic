@@ -3,7 +3,7 @@ import { browser, by, element, $ } from 'protractor';
 export class HomePage {
 
     public getItem() {
-        return element.all(by.css('ion-item-sliding.item-wrapper')).get(2);
+       return element.all(by.css('ion-item-sliding.button')).get(2);       
     }
 
     public getLastItem() {
