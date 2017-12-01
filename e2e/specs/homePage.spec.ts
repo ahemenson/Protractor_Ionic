@@ -40,7 +40,7 @@ export class HomePageSpec {
                 // browser.sleep(1000);
             });
 
-            it('03 - get info about first item', () => {
+            xit('03 - get info about first item', () => {
                 browser.sleep(1000);
                 //console log
                 homepage.getFirstItemLabels().getText().then(function (text) {
@@ -49,7 +49,7 @@ export class HomePageSpec {
                 expect(homepage.getFirstItemLabels().getText()).toContain('Burt Bear');
             });
 
-            it('04 - Cancel the add new Item', () => {
+            xit('04 - Cancel the add new Item', () => {
                 browser.sleep(1000);
                 homepage.getAddIcon().click();
                 browser.sleep(1000);
@@ -67,6 +67,17 @@ export class HomePageSpec {
                 homepage.getButtonDone().click();
                 browser.sleep(1000);
                 expect(homepage.getItemLabelName().getText()).toBe('Ahemenson');
+            });
+
+            it('06 - check name on new item detail', () => {
+                homepage.getLastItem().click();
+                browser.sleep(1000);
+                expect(homepage.getItemNameDetails().getText()).toBe('Ahemenson');
+            });
+
+            it('06 - check about on new item detail', () => {             
+                
+                expect(homepage.getItemAboutDetails().getText()).toBe('About');
             });
 
 

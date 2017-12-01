@@ -6,8 +6,16 @@ export class HomePage {
         return element.all(by.css('ion-item-sliding.item-wrapper')).get(2);
     }
 
-    public getItem2() {
+    public getLastItem() {
+        return element.all(by.css('ion-item-sliding.item-wrapper')).last();
+    }
 
+    public getItemNameDetails() {
+        return element(by.className('item-detail')).element(by.tagName('h2'));
+    }
+
+    public getItemAboutDetails() {
+        return element(by.className('item-detail')).element(by.tagName('p'));
     }
 
     public getTabHome() {
