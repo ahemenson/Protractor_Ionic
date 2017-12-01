@@ -22,10 +22,29 @@ export class HomePage {
         return element(by.id('tab-t0-2'));
     }
 
+    public getItemLabelName() {
+        return element.all(by.css('ion-item-sliding.item-wrapper'))
+            .last()
+            .element(by.tagName('h2'));
+    }
+
+    public getItemLabelAbout() {
+        return element.all(by.css('ion-item-sliding.item-wrapper'))
+            .last()
+            .element(by.tagName('p'));
+    }
+
     public getButtonBack() {
         return element.all(by.css('ion-header.header'))
-            // .element(by.css('ion-navbar.toolbar toolbar-md'))
             .element(by.css('button.back-button'));
+    }
+
+    public getFirstItemLabels() {
+        return element.all(by.css('ion-item-sliding.item-wrapper')).first().element(by.tagName('ion-label'));
+    }
+
+    public getNewtemLabels() {
+        return element.all(by.css('ion-item-sliding.item-wrapper')).last().element(by.tagName('ion-label'));
     }
 
     public getAddIcon() {
@@ -33,10 +52,6 @@ export class HomePage {
     }
 
     public getNameField() {
-        // return element(by.className('list list-md'))
-        // .element(by.css('div.item-inner'))       
-        // .element(by.id('inputname')); 
-
         return element(by.css("input[formControlName=name]"));
     }
 
@@ -48,6 +63,9 @@ export class HomePage {
         return element(by.id('btn_done'));
     }
 
+    public getButtonCancel() {
+        return element(by.id('btn_cancel'));
+    }
 
     public operation(name: string, about: string) {
         this.getNameField().sendKeys(name);
