@@ -59,7 +59,7 @@ export class HomePageSpec {
                 expect(homepage.getItemLabelName().getText()).not.toBe('Ahemenson');
             });
 
-            it('05 - Add new Item', () => {
+            xit('05 - Add new Item', () => {
                 browser.sleep(3000);
                 homepage.getAddIcon().click();
                 browser.sleep(1000);
@@ -69,18 +69,15 @@ export class HomePageSpec {
                 expect(homepage.getItemLabelName().getText()).toBe('Ahemenson');
             });
 
-            it('06 - check name on new item detail', () => {
+           xit('06 - check name on new item detail', () => {
                 homepage.getLastItem().click();
                 browser.sleep(1000);
                 expect(homepage.getItemNameDetails().getText()).toBe('Ahemenson');
             });
 
-            it('06 - check about on new item detail', () => {             
-                
+            xit('06 - check about on new item detail', () => {
                 expect(homepage.getItemAboutDetails().getText()).toBe('About');
             });
-
-
 
 
         });
