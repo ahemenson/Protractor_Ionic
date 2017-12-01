@@ -17,7 +17,7 @@ import { Settings } from '../providers/providers';
 
     <ion-content>
       <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <button id="btn_back" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           {{p.title}}
         </button>
       </ion-list>

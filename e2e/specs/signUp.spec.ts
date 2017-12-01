@@ -18,11 +18,11 @@ export class SignUpSpec {
         // browser.refresh();
       });
 
-      it('01 - Verify text not is Welcome', () => {
+      xit('01 - Verify text not is Welcome', () => {
         expect(RegisterPage.gettitle().getText()).not.toEqual('Welcome');
       });
 
-      it('02 - Verify text is Welcome to the Ionic Super Starter', () => {
+      xit('02 - Verify text is Welcome to the Ionic Super Starter', () => {
         expect(RegisterPage.gettitle().getText()).toEqual('Welcome to the Ionic Super Starter');
       });
 

@@ -19,7 +19,7 @@ export class HomePageSpec {
                 browser.sleep(1000)
             });
 
-            it('01 - Change on tabs', () => {
+            xit('01 - Change on tabs', () => {
                 homepage.getTabSearch().click();
                 browser.sleep(1000);
                 homepage.getTabCog().click();
@@ -28,23 +28,25 @@ export class HomePageSpec {
 
             });
 
-            it('02 - click on item', () => {
+            xit('02 - click on item', () => {
                 //homepage.getAddIcon().click();
                 browser.sleep(1000);
                 // homepage.getTab().click();      
                 homepage.getItem().click();
                 browser.sleep(1000);
-               // homepage.getButtonBack().click();
+                homepage.getButtonBack().click();
+                // homepage.getButtonBack().click();
                 // homepage.getItem2().click();
                 // browser.sleep(1000);
             });
 
-            xit('03 - Add new Item', () => {
-                homepage.getAddIcon().click();               
-                //homepage.operation('New Item', 'Add a new item on menu');
-                homepage.getNameField().sendKeys('asdkfansfd');
-                //browser.sleep(1000);
-                // homepage.getButtonDone().click();
+            it('03 - Add new Item', () => {
+                browser.sleep(3000);
+                homepage.getAddIcon().click();
+                browser.sleep(1000);
+                homepage.operation('Ahemenson', "About");
+                homepage.getButtonDone().click();
+                browser.sleep(1000);
                 //expect(homepage.gettitle().getText()).not.toEqual('Welcome');              
 
             });
