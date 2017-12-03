@@ -2,8 +2,9 @@ import { browser, by, element, $ } from 'protractor';
 
 export class HomePage {
 
-    public getItem() {
-       return element.all(by.css('ion-item-sliding.button')).get(2);       
+    public getItem(position: number) {
+      return element.all(by.css('ion-item-sliding.item-wrapper')).get(position);  
+      
     }
 
     public getLastItem() {
@@ -16,6 +17,11 @@ export class HomePage {
 
     public getItemAboutDetails() {
         return element(by.className('item-detail')).element(by.tagName('p'));
+    }
+
+    public getHomeTitle() {
+        return element(by.tagName('ion-title'));
+        //.element(by.tagName('toolbar-title-md'));
     }
 
     public getTabHome() {
@@ -79,8 +85,5 @@ export class HomePage {
         this.getNameField().sendKeys(name);
         this.getAboutField().sendKeys(about);
     }
-
-
-
 
 }

@@ -8,7 +8,7 @@ exports.config = {
         'chromeOptions': {
             'mobileEmulation': {
                 // 'deviceName': 'ipad ',
-                "deviceMetrics": { "width": 412, "height": 732, "touch": true }, //Nexus 6P
+                "deviceMetrics": { "width": 412, "height": 500, "touch": true }, //Nexus 6P
             }
         }
     },

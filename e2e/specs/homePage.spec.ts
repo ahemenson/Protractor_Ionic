@@ -11,7 +11,7 @@ export class HomePageSpec {
             beforeAll(() => {
                 homepage = new HomePage();
                 //homepage.navigateTo();
-                 browser.sleep(3000)
+                browser.sleep(3000)
 
             });
 
@@ -26,18 +26,19 @@ export class HomePageSpec {
                 homepage.getTabCog().click();
                 browser.sleep(1000);
                 homepage.getTabHome().click();
-
+                expect(homepage.getHomeTitle().getText()).toBe('items');
             });
 
-            it('02 - click on item', () => {                
-                browser.sleep(1000);                    
-                homepage.getItem().click();
+            xit('02 - click on item', () => {
+                 homepage.getItem(0).click();
                 browser.sleep(1000);
-                homepage.getButtonBack().click();              
+                //homepage.getButtonBack().click();
+                expect(homepage.getFirstItemLabels().getText()).toContain('Burt Bear');
             });
 
-            it('03 - get info about first item', () => {
+            xit('03 - get info about first item', () => {
                 browser.sleep(1000);
+                homepage.getItem(1).click();
                 //console log
                 homepage.getFirstItemLabels().getText().then(function (text) {
                     console.log(text);
@@ -45,7 +46,7 @@ export class HomePageSpec {
                 expect(homepage.getFirstItemLabels().getText()).toContain('Burt Bear');
             });
 
-            it('04 - Cancel the add new Item', () => {
+            xit('04 - Cancel the add new Item', () => {
                 browser.sleep(1000);
                 homepage.getAddIcon().click();
                 browser.sleep(1000);
@@ -55,7 +56,7 @@ export class HomePageSpec {
                 expect(homepage.getItemLabelName().getText()).not.toBe('Ahemenson');
             });
 
-            it('05 - Add new Item', () => {
+            xit('05 - Add new Item', () => {
                 browser.sleep(3000);
                 homepage.getAddIcon().click();
                 browser.sleep(1000);
@@ -65,13 +66,13 @@ export class HomePageSpec {
                 expect(homepage.getItemLabelName().getText()).toBe('Ahemenson');
             });
 
-            it('06 - check name on new item detail', () => {
-                homepage.getLastItem().click();
+            xit('06 - check name on new item detail', () => {
+                homepage.getItem(3).click();
                 browser.sleep(1000);
                 expect(homepage.getItemNameDetails().getText()).toBe('Ahemenson');
             });
 
-            it('06 - check about on new item detail', () => {
+            xit('06 - check about on new item detail', () => {
                 expect(homepage.getItemAboutDetails().getText()).toBe('About');
             });
 

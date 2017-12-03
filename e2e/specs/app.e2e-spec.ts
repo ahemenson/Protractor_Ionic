@@ -15,6 +15,6 @@ describe('All tests', () => {
 
   signUpSpec.signUpPage();
   homePageSpec.homePage();
-  settingsPageSpec.settingsPage();
+  //settingsPageSpec.settingsPage();
     
 });
