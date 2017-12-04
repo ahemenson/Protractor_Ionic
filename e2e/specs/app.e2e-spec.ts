@@ -3,8 +3,8 @@ import { HomePageSpec } from '../specs/homePage.spec';
 import { SettingsPageSpec } from '../specs/settingsPage.spec';
 
 /**
- * The test specialist in realize login page.
- * @type {SignInSpec} the test specialist in conversation page.
+ * The test specialist in realize all page.
+ * @type {SignUpSpec} the test specialist in conversation page.
  */
 const signUpSpec = new SignUpSpec();
 const homePageSpec = new HomePageSpec();
@@ -15,6 +15,6 @@ describe('All tests', () => {
 
   signUpSpec.signUpPage();
   homePageSpec.homePage();
-  //settingsPageSpec.settingsPage();
+//  settingsPageSpec.settingsPage();
     
 });

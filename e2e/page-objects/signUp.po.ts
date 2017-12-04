@@ -19,7 +19,7 @@ export class SignUp {
     }
 
     public gettitle() {
-        return element(by.id('msg_title'));
+        return element.all(by.id('msg_title')).first();
     };
 
     public getButtonSkip() {

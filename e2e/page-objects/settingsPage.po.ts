@@ -11,12 +11,7 @@ export class SettingsPage {
         return element(by.id('tab-t0-2'));
     }
 
-    public getToggle() {
-        // return element(by.tagName('ion-app'))
-        //     .element(by.tagName('ng-component'))
-        //     .element(by.css('div.scroll-content'))
-        //     .element(by.tagName('ion-list'))
-        //      .element(by.tagName('ion - toggle'));
+    public getToggle() {       
         return element(by.css("toggle[formControlName=option1]"));
         //return element(by.id('toggle'));
 

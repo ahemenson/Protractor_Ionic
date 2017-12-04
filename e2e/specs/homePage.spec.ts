@@ -17,33 +17,37 @@ export class HomePageSpec {
 
             afterEach(() => {
                 //browser.refresh();
-                browser.sleep(1000)
+                browser.sleep(1000);
+                //homepage.navigateTo();
             });
 
-            it('01 - Change on tabs', () => {
+            xit('01 - Change on tabs', () => {
                 homepage.getTabSearch().click();
-                browser.sleep(1000);
+                browser.sleep(500);
                 homepage.getTabCog().click();
-                browser.sleep(1000);
+                browser.sleep(500);
                 homepage.getTabHome().click();
-                expect(homepage.getHomeTitle().getText()).toBe('items');
+                expect(homepage.getHomeTitle().getText()).toBe('Items');
             });
 
-            xit('02 - click on item', () => {
-                 homepage.getItem(0).click();
-                browser.sleep(1000);
-                //homepage.getButtonBack().click();
-                expect(homepage.getFirstItemLabels().getText()).toContain('Burt Bear');
-            });
-
-            xit('03 - get info about first item', () => {
-                browser.sleep(1000);
+            it('02 - click on item (02)', () => {
+                browser.sleep(500);
                 homepage.getItem(1).click();
+                browser.sleep(500);
+                let itemDetail = homepage.getDetailTitle();
+                homepage.getButtonBack().click();
+                //console.log(homepage.getButtonBack().getAttribute('class'));
+                expect(itemDetail.getText()).toContain('Charlie Cheetah');
+            });
+
+            xit('03 - click on item 0 and get info about', () => {
+                browser.sleep(1000);
+                homepage.getItem(0).click();
                 //console log
                 homepage.getFirstItemLabels().getText().then(function (text) {
                     console.log(text);
                 });
-                expect(homepage.getFirstItemLabels().getText()).toContain('Burt Bear');
+                expect(homepage.getFirstItemLabels().getText()).toBe('Burt Bear Burt is a Bear.');
             });
 
             xit('04 - Cancel the add new Item', () => {

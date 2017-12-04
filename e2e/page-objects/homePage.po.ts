@@ -3,8 +3,12 @@ import { browser, by, element, $ } from 'protractor';
 export class HomePage {
 
     public getItem(position: number) {
-      return element.all(by.css('ion-item-sliding.item-wrapper')).get(position);  
-      
+        return element.all(by.css('ion-item-sliding.item-wrapper')).get(position);
+
+    }
+
+    navigateTo() {
+        return browser.get('/#/tabs/items/list-master');
     }
 
     public getLastItem() {
@@ -20,12 +24,15 @@ export class HomePage {
     }
 
     public getHomeTitle() {
-        return element(by.tagName('ion-title'));
-        //.element(by.tagName('toolbar-title-md'));
+        return element(by.id('page-title'));
     }
 
     public getTabHome() {
         return element(by.id('tab-t0-0'));
+    }
+
+    public getDetailTitle() {
+        return element(by.id('item-name'));
     }
 
     public getTabSearch() {
@@ -49,8 +56,10 @@ export class HomePage {
     }
 
     public getButtonBack() {
-        return element.all(by.css('ion-header.header'))
-            .element(by.css('button.back-button'));
+        return element(by.tagName('ion-header'))
+            .element(by.className('toolbar toolbar-md'))
+            .element(by.css('button back-button button-inner'));
+
     }
 
     public getFirstItemLabels() {
