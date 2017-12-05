@@ -56,9 +56,11 @@ export class HomePage {
     }
 
     public getButtonBack() {
-        return element(by.tagName('ion-header'))
-            .element(by.className('toolbar toolbar-md'))
-            .element(by.css('button back-button button-inner'));
+       // return element(by.tagName('ion-header'))
+        //    .element(by.className('toolbar toolbar-md'))
+       //     .element(by.css('button back-button button-inner'));
+
+       return element.all(by.tagName('button'));
 
     }
 

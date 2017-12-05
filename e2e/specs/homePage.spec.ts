@@ -11,74 +11,85 @@ export class HomePageSpec {
             beforeAll(() => {
                 homepage = new HomePage();
                 //homepage.navigateTo();
-                browser.sleep(3000)
+                browser.sleep(1000);
+                homepage.getTabHome().click();
 
             });
 
             afterEach(() => {
                 //browser.refresh();
-                browser.sleep(1000);
+                browser.sleep(500);
                 //homepage.navigateTo();
             });
 
-            xit('01 - Change on tabs', () => {
+            it('01 - Change on tabs', () => {
                 homepage.getTabSearch().click();
                 browser.sleep(500);
                 homepage.getTabCog().click();
                 browser.sleep(500);
                 homepage.getTabHome().click();
+                browser.sleep(500);
                 expect(homepage.getHomeTitle().getText()).toBe('Items');
             });
 
-            it('02 - click on item (02)', () => {
-                browser.sleep(500);
-                homepage.getItem(1).click();
-                browser.sleep(500);
-                let itemDetail = homepage.getDetailTitle();
-                homepage.getButtonBack().click();
-                //console.log(homepage.getButtonBack().getAttribute('class'));
-                expect(itemDetail.getText()).toContain('Charlie Cheetah');
-            });
 
-            xit('03 - click on item 0 and get info about', () => {
-                browser.sleep(1000);
-                homepage.getItem(0).click();
-                //console log
-                homepage.getFirstItemLabels().getText().then(function (text) {
-                    console.log(text);
-                });
-                expect(homepage.getFirstItemLabels().getText()).toBe('Burt Bear Burt is a Bear.');
-            });
+            it('02 - Cancel the add new Item', () => {
 
-            xit('04 - Cancel the add new Item', () => {
-                browser.sleep(1000);
+                browser.sleep(500);
                 homepage.getAddIcon().click();
-                browser.sleep(1000);
+                browser.sleep(500);
                 homepage.operation('Ahemenson', 'About');
                 homepage.getButtonCancel().click();
-                browser.sleep(1000);
+                browser.sleep(500);
                 expect(homepage.getItemLabelName().getText()).not.toBe('Ahemenson');
             });
 
-            xit('05 - Add new Item', () => {
-                browser.sleep(3000);
+            it('03 - Add new Item', () => {
+                browser.sleep(500);
                 homepage.getAddIcon().click();
-                browser.sleep(1000);
-                homepage.operation('Ahemenson', 'About');
+                browser.sleep(500);
+                homepage.operation('Ahemenson', 'abcde 123');
                 homepage.getButtonDone().click();
-                browser.sleep(1000);
+                browser.sleep(500);
                 expect(homepage.getItemLabelName().getText()).toBe('Ahemenson');
             });
 
-            xit('06 - check name on new item detail', () => {
-                homepage.getItem(3).click();
-                browser.sleep(1000);
+            it('04 - check name on new item detail', () => {
+                homepage.getLastItem().click();
+                browser.sleep(500);
                 expect(homepage.getItemNameDetails().getText()).toBe('Ahemenson');
+                expect(homepage.getItemAboutDetails().getText()).toBe('abcde 123');
+            });
+            
+
+            it('07 - click on item (02)', () => {
+
+                browser.sleep(500);
+                homepage.getTabHome().click();
+                browser.sleep(500);
+                homepage.getItem(1).click();
+                browser.sleep(500);
+                //  console.log(elementToBePresent);                   
+                expect(homepage.getDetailTitle().getText()).toContain('Charlie Cheetah');
             });
 
-            xit('06 - check about on new item detail', () => {
-                expect(homepage.getItemAboutDetails().getText()).toBe('About');
+            /** 
+
+            xit('08 - click on item 0 and get info about', () => {
+
+                browser.sleep(500);
+                homepage.getButtonBack().click();
+                browser.sleep(500);
+                homepage.getItem(0).click();
+                browser.sleep(500);
+                //console log
+                homepage.getItemNameDetails().getText().then(function (text) {
+                    console.log(text);
+                });
+                expect(homepage.getItemNameDetails().getText()).toContain('Burt Bear');
             });
+
+              */
 
 
         });

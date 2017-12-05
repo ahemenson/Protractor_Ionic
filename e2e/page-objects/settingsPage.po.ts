@@ -17,6 +17,7 @@ export class SettingsPage {
 
 
     }
+    
 
     public getOption2() {
         return element(by.css('input[formControlName=option2]'));

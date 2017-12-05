@@ -14,7 +14,9 @@ const settingsPageSpec = new SettingsPageSpec();
 describe('All tests', () => {
 
   signUpSpec.signUpPage();
+  
+  settingsPageSpec.settingsPage();
+
   homePageSpec.homePage();
-//  settingsPageSpec.settingsPage();
-    
+
 });

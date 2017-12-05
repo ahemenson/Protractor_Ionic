@@ -16,6 +16,7 @@ export class SignUpSpec {
 
       afterEach(() => {
         // browser.refresh();
+        browser.sleep(500);
       });
 
       it('01 - Verify text not is Welcome', () => {
@@ -34,7 +35,7 @@ export class SignUpSpec {
         RegisterPage.operation('Ahemenson Fernandes', 'ahemenson@gmail.com', '1234');
         browser.sleep(1000);
         RegisterPage.getButtonRegister().click();
-        browser.sleep(1000);      
+        browser.sleep(5000);
         //expect(loginPage.gettitle().getText()).toEqual('Welcome to the Ionic Super Starter');
       });
 
