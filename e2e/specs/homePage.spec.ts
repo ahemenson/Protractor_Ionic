@@ -11,7 +11,7 @@ export class HomePageSpec {
             beforeAll(() => {
                 homepage = new HomePage();
                 //homepage.navigateTo();
-                browser.sleep(1000);
+                browser.sleep(2000);
                 homepage.getTabHome().click();
 
             });

@@ -11,6 +11,7 @@ export class SignUpSpec {
       beforeAll(() => {
         RegisterPage = new SignUp();
         RegisterPage.navigateTo();
+        browser.sleep(500);
 
       });
 
@@ -48,13 +49,13 @@ export class SignUpSpec {
 
       it('03 - Register user', () => {
         RegisterPage.getButtonSkip().click();
-        browser.sleep(1000);
+        browser.sleep(500);
         RegisterPage.getButtonSignUp().click();
-        browser.sleep(1000);
+        browser.sleep(500);
         RegisterPage.operation('Ahemenson Fernandes', 'ahemenson@gmail.com', '1234');
-        browser.sleep(1000);       
+        browser.sleep(500);       
         RegisterPage.getButtonRegister().click();
-        browser.sleep(5000);
+        browser.sleep(2000);
         //expect(RegisterPage.gettitle().getText()).toEqual('Welcome to the Ionic Super Starter');
       });
 

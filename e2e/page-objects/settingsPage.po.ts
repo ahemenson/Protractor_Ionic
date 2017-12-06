@@ -12,7 +12,7 @@ export class SettingsPage {
     }
 
     public getToggle() {       
-        return element(by.css("toggle[formControlName=option1]"));
+        return element(by.tagName("ion-toggle"));
         //return element(by.id('toggle'));
 
 
