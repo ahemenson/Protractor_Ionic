@@ -19,14 +19,15 @@ export class SettingsPageSpec {
                 browser.sleep(500)
             });
 
-             /**
+            /**
 
-            xit('01 - disable toggle', () => {
-                settingsPage.getToggle().click();
+           xit('01 - disable toggle', () => {
+               settingsPage.getToggle().click();
 
-            });
+           });
 
-            */
+           */
+           
 
             it('02 - insert on input 2', () => {
                 settingsPage.getOption2().clear();
