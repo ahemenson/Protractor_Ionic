@@ -7,9 +7,10 @@ exports.config = {
         'browserName': 'chrome',
         'chromeOptions': {
             'mobileEmulation': {
-                // 'deviceName': 'ipad ',
-                "deviceMetrics": { "width": 450, "height": 720, "touch": true }, //Nexus 6P
-            }
+                // 'deviceName': 'iphone',
+                // 'deviceMetrics': { 'width': 412, 'height': 732 }, //Nexus 6P
+            },
+            'args': ['--window-size=520,840'],
         }
     },
     framework: 'jasmine',
