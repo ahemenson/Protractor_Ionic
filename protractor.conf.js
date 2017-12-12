@@ -2,7 +2,8 @@ var SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 
 exports.config = {
     allScriptsTimeout: 11000,
-    directConnect: true,
+    directConnect: true, // set false and use selenium adrress to run 
+    //seleniumAddress: 'http://localhost:4444/wd/hub', // if want user selenium server
     capabilities: {
         'browserName': 'chrome',
         'chromeOptions': {
